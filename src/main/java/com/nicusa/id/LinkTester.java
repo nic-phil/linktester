@@ -8,7 +8,7 @@ import mslinks.*;
  */
 public class LinkTester {
     public static void main(String[] args) throws IOException {
-            ShellLink sl = ShellLink.createLink("%COMSPEC% /C javaws https://otc.cdc.nicusa.com/downloads/SwiperApp/client_devices.jnlp")
+            ShellLink sl = ShellLink.createLink("%COMSPEC% /C javaws 'https://otc.cdc.nicusa.com/downloads/SwiperApp/client_devices.jnlp'")
                     .setWorkingDir("..")
                     .setIconLocation("%SystemRoot%\\system32\\SHELL32.dll");
             sl.getHeader().setIconIndex(128);
