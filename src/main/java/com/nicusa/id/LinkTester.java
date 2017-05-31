@@ -8,10 +8,11 @@ import mslinks.*;
  */
 public class LinkTester {
     public static void main(String[] args) throws IOException {
-            ShellLink sl = ShellLink.createLink("%COMSPEC% /C javaws 'https://otc.cdc.nicusa.com/downloads/SwiperApp/client_devices.jnlp'")
+            ShellLink sl = ShellLink.createLink("%COMSPEC%")
                     .setWorkingDir("..")
-                    .setIconLocation("%SystemRoot%\\system32\\SHELL32.dll");
-            sl.getHeader().setIconIndex(128);
+                    .setCMDArgs( "/C javaws https://otc.cdc.nicusa.com/downloads/SwiperApp/client_devices.jnlp")
+                    .setIconLocation("images\\swiper.ico");
+            sl.getHeader().setIconIndex(0);
             sl.getConsoleData()
                     .setFont(mslinks.extra.ConsoleData.Font.Consolas)
                     .setFontSize(24)
